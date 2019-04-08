@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CircleTheWordActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/background1"
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"
+        android:gravity="right"
+        android:text="@string/text1"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:id="@+id/tx"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textDirection="rtl"
+        android:background="@drawable/background1"
+        android:paddingTop="4dp"
+        android:paddingRight="15dp"
+        android:gravity="right"
+        android:text="@string/text2"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:id="@+id/txt"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_one"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="4dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:background="#2d2d2d"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/parda"
+                    android:id="@+id/parda"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="پەردە"
+                    android:textColor="#2d2d2d"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:id="@+id/txt1"
+                    />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:id="@+id/card_two"
+            app:cardCornerRadius="4dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:background="#f4f9ff"
+                    android:src="@drawable/darga"
+                    android:id="@+id/darga"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="دەرگا"
+                    android:textColor="#2d2d2d"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:id="@+id/txt2"
+                    />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="5dp"
+            android:id="@+id/card_three"
+            android:layout_weight="1"
+            app:cardCornerRadius="4dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:background="#f4f9ff"
+                    android:src="@drawable/amad"
+                    android:id="@+id/amad"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="ئامەد"
+                    android:textColor="#2d2d2d"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:id="@+id/txt3"
+                    />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="5dp"
+            android:id="@+id/card_four"
+            android:layout_weight="1"
+            app:cardCornerRadius="4dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:background="#f4f9ff"
+                    android:src="@drawable/panjara"
+                    android:id="@+id/panjara"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="پەنجەرە"
+                    android:textColor="#2d2d2d"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:id="@+id/txt4"
+                    />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="300dp"
+            android:background="@drawable/next1"
+            android:id="@+id/next"/>
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>

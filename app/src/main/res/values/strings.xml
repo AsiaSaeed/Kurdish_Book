@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">خوێندنی کوردی</string>
+    <string name="ctl_a_fourth_tv">کیسەڵ</string>
+    <string name="ctl_a_third_tv">پەردە</string>
+    <string name="ctl_a_second_tv">دەم</string>
+    <string name="ctl_a_first_tv">زەرد</string>
+    <string name="bbenawble">ناوی وێنەکان بڵێ.</string>
+    <string name="text1">ناوی ئەو وێنانە بڵێ</string>
+    <string name="text2">ئەو وشانە هەڵبژێرە کە پیتی/د/</string>
+</resources>

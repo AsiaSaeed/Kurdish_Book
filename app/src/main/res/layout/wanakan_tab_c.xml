@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardone"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="4dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+
+                <TextView
+                    android:id="@+id/title_text"
+                    android:textColor="#2d2d2d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="کۆرسی یەکەم"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/imgcard"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:text="وانەکان"
+                    android:paddingTop="30dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/chalaky5"
+                    android:textSize="75sp"
+                    android:background="@drawable/wena_background"
+                    />
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="4dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:id="@+id/cardtwo">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+
+                <TextView
+                    android:textColor="#2d2d2d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="کۆرسی دووەم"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:text="وانەکان "
+                    android:paddingTop="30dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/chalaky5"
+                    android:textSize="75sp"
+                    android:background="@drawable/wena_background"
+                     />
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
