@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WanekanActivity">
+    <TextView
+        android:id="@+id/wane_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="@dimen/genral_ma_pa"
+        android:background="@drawable/backgroundy_wane"
+        android:textDirection="rtl"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="#ff0000"
+        android:text="وانەکانی کۆرسی یەکەم"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/wane_rc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/wane_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="@dimen/genral_ma_pa"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="MissingConstraints" />
+</android.support.constraint.ConstraintLayout>

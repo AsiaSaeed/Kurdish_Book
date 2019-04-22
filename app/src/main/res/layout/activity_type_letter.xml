@@ -6,216 +6,230 @@
     android:layout_height="match_parent"
     tools:context=".TypeLetterActivity">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout android:id="@+id/total_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="چالاکی٤ "
-        android:layout_gravity="right"
-        android:background="#fff"
-        android:textAllCaps="true"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#40AEF9"/>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:background="#fff"
+            android:text="چالاکی٤ "
+            android:textAllCaps="true"
+            android:textColor="#40AEF9"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="250dp"
-        android:layout_height="70dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/red_text_view_background"
-        android:text="ناوی وێنەکان بڵێ ،پیتی د بنووسە  "
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_gravity="right"
-        />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:background="@drawable/red_text_view_background"
+            android:text="ناوی وێنەکان بڵێ ،پیتی د بنووسە  "
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-    <ImageButton
-        android:id="@+id/bard"
-        android:layout_width="250dp"
-        android:layout_height="202dp"
-        android:layout_margin="@dimen/genral_ma_pa"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="right"
-        app:srcCompat="@drawable/bard"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="116dp" />
+        <ImageButton
+            android:id="@+id/bard"
+            android:layout_width="250dp"
+            android:layout_height="202dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_margin="@dimen/genral_ma_pa"
+            app:srcCompat="@drawable/bard"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="116dp" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="61dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="100dp"
-        android:layout_gravity="right"
-        android:text="بەر...."
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="195dp"
-        tools:layout_editor_absoluteY="310dp" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="61dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="100dp"
+            android:text="بەر...."
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="195dp"
+            tools:layout_editor_absoluteY="310dp" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="123dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="457dp" />
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="457dp" />
 
-    <ImageButton
-        android:id="@+id/dam"
-        android:layout_width="250dp"
-        android:layout_height="168dp"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="right"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/dam"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="722dp" />
+        <ImageButton
+            android:id="@+id/dam"
+            android:layout_width="250dp"
+            android:layout_height="168dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            app:srcCompat="@drawable/dam"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="722dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_gravity="right"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:text="...ەم"
-        android:textColor="@color/colorAccent"
-        android:layout_marginRight="100dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="893dp" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="100dp"
+            android:text="...ەم"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="893dp" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="123dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="289dp"
-        android:layout_alignParentLeft="true" />
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="289dp" />
 
-    <ImageButton
-        android:id="@+id/prd"
-        android:layout_width="250dp"
-        android:layout_height="168dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="right"
-        app:srcCompat="@drawable/prd"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="514dp" />
+        <ImageButton
+            android:id="@+id/prd"
+            android:layout_width="250dp"
+            android:layout_height="168dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            app:srcCompat="@drawable/prd"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="514dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="39dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="right"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:text="پر..."
-        android:layout_marginRight="100dp"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="217dp"
-        tools:layout_editor_absoluteY="671dp" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="39dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="100dp"
+            android:text="پر..."
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="217dp"
+            tools:layout_editor_absoluteY="671dp" />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="123dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="870dp"
-        android:layout_alignParentLeft="true" />
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="181dp"
+            tools:layout_editor_absoluteY="870dp" />
 
-    <ImageButton
-        android:id="@+id/diwar"
-        android:layout_width="250dp"
-        android:layout_height="132dp"
-        android:layout_margin="@dimen/genral_ma_pa"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="right"
+        <ImageButton
+            android:id="@+id/diwar"
+            android:layout_width="250dp"
+            android:layout_height="132dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_margin="@dimen/genral_ma_pa"
 
-        app:srcCompat="@drawable/diwar"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="352dp" />
+            app:srcCompat="@drawable/diwar"
+            tools:layout_editor_absoluteX="77dp"
+            tools:layout_editor_absoluteY="352dp" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="right"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:text="...یوار"
-        android:layout_marginRight="100dp"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="478dp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="100dp"
+            android:text="...یوار"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="123dp"
+            tools:layout_editor_absoluteY="478dp" />
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="123dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="right"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="651dp"
-        android:layout_alignParentLeft="true" />
-    <Button
-        android:id="@+id/next"
-        android:layout_width="50dp"
-        android:layout_height="35dp"
-        android:layout_margin="15dp"
-        android:layout_gravity="right"
-        android:background="@drawable/next1"
-        />
-</LinearLayout>
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="651dp" />
+    </LinearLayout>
+        <Button
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_layout"
+            android:id="@+id/next"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_margin="@dimen/genral_ma_pa"
+            android:background="@drawable/next1" />
+
+        <Button
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_layout"
+            android:id="@+id/back_ttl"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_margin="@dimen/genral_ma_pa"
+            android:background="@drawable/home" />
+    </android.support.constraint.ConstraintLayout>
 </ScrollView>

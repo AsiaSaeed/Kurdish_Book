@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="110dp"
+    android:layout_height="150dp"
+    android:paddingTop="@dimen/genral_ma_pa"
+    android:padding="@dimen/genral_ma_pa">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/wane_cv"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+
+        android:padding="@dimen/genral_ma_pa">
+
+        <TextView
+            android:id="@+id/pet_tv"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="@dimen/genral_ma_pa"
+            android:background="@drawable/backgroundy_wane"
+            android:gravity="center"
+            android:padding="@dimen/genral_ma_pa"
+            android:textColor="@color/chalaky5"
+            android:textSize="35sp" />
+
+
+        <TextView
+            android:id="@+id/wane_tv"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="@dimen/genral_ma_pa"
+            android:padding="@dimen/genral_ma_pa"
+            android:gravity="center"
+            android:textColor="#ff0000"
+            android:textSize="10sp" />
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -4,217 +4,331 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".RastUHalaActivity">
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <LinearLayout
-            android:visibility="visible"
+
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/chalaki_penj_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="right"
-            android:paddingTop="5dp"
-            android:paddingRight="15dp"
-            android:text="چالاکی (٥)"
-            android:textAlignment="center"
-            android:textColor="@color/chalaky5"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/text2"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/background"
-            android:gravity="right"
-            android:paddingTop="5dp"
-            android:paddingRight="15dp"
-            android:text="نیشانەی()یان ()دابنێ"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/cardtwo"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="4dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:background="#2d2d2d"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/rast1" />
-
-                    <Button
-                        android:id="@+id/btn1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="5dp" />
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="4dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:background="#f4f9ff"
-                        android:src="@drawable/hala" />
-
-                    <Button
-                        android:id="@+id/btn2"
-                        android:layout_width="100dp"
-                        android:layout_height="45dp"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="5dp"
-
-                        />
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="4dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                    <ImageView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:background="#f4f9ff"
-                        android:src="@drawable/rast" />
-
-                    <Button
-                        android:id="@+id/btn3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="5dp" />
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="4dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:background="#f4f9ff"
-                        android:src="@drawable/rast1" />
-
-                    <Button
-                        android:id="@+id/btn4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="5dp" />
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-
-        </LinearLayout>
-
-
-        <Button
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/circle_score"
-            android:text="نمرەی بەدەستهاتو" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/score_layout"
-            android:visibility="gone"
-            android:background="@drawable/scorebackground"
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <TextView
+            android:visibility="visible">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" 100 نمرە"
-                android:textColor="#ff0000"
+                android:orientation="vertical"
+                android:id="@+id/parent_layout"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:paddingTop="5dp"
+                    android:paddingRight="15dp"
+                    android:text="چالاکی (٥)"
+                    android:textAlignment="center"
+                    android:textColor="@color/chalaky5"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/background"
+                    android:gravity="right"
+                    android:paddingTop="5dp"
+                    android:paddingRight="15dp"
+                    android:text="نیشانەی()یان ()دابنێ"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardtwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="4dp">
+
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:id="@+id/first_chose_first_iv"
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:background="#2d2d2d"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/rast"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+                                android:id="@+id/btn1r"
+                                android:layout_width="60dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="@dimen/genral_ma_pa"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/right"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="@id/btn1h"
+                                app:layout_constraintTop_toBottomOf="@id/first_chose_first_iv" />
+
+                            <Button
+                                android:id="@+id/btn1h"
+                                android:layout_width="60dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="@dimen/genral_ma_pa"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/wrong"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/first_chose_first_iv" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="4dp">
+
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:id="@+id/first_chose_second_iv"
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:background="#f4f9ff"
+                                android:src="@drawable/hala"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+
+                                android:id="@+id/btn2r"
+
+                                android:layout_width="60dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="@dimen/genral_ma_pa"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/right"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="@id/btn2h"
+                                app:layout_constraintTop_toBottomOf="@id/first_chose_second_iv" />
+
+                            <Button
+                                android:id="@+id/btn2h"
+
+                                android:layout_width="60dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="@dimen/genral_ma_pa"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/wrong"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/first_chose_second_iv" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="4dp">
+
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:id="@+id/first_chose_third_iv"
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:background="#f4f9ff"
+                                android:src="@drawable/hala1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+
+                                android:id="@+id/btn3r"
+
+                                android:layout_width="60dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="@dimen/genral_ma_pa"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/right"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="@id/btn3h"
+                                app:layout_constraintTop_toBottomOf="@id/first_chose_third_iv" />
+
+                            <Button
+                                android:id="@+id/btn3h"
+
+                                android:layout_width="60dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="@dimen/genral_ma_pa"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/wrong"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/first_chose_third_iv" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="4dp">
+
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <ImageView
+                                android:id="@+id/fourth_chose_third_iv"
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:background="#f4f9ff"
+                                android:src="@drawable/rast1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <Button
+
+                                android:id="@+id/btn4r"
+
+                                android:layout_width="60dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="@dimen/genral_ma_pa"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/right"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toLeftOf="@id/btn4h"
+                                app:layout_constraintTop_toBottomOf="@id/fourth_chose_third_iv" />
+
+                            <Button
+                                android:id="@+id/btn4h"
+
+                                android:layout_width="60dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="@dimen/genral_ma_pa"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/wrong"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/fourth_chose_third_iv" />
+                        </android.support.constraint.ConstraintLayout>
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/genral_ma_pa"
+                android:background="@drawable/circle_score"
+                android:text="نمرەی بەدەستهاتو"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/parent_layout"
+               />
+
+            <Button
+                android:id="@+id/back_RUHA"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:layout_margin="@dimen/genral_ma_pa"
+                android:background="@drawable/home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/parent_layout"/>
+        </android.support.constraint.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/score_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/scorebackground"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:text=" 100 نمرە"
                 android:textAlignment="center"
-                android:textSize="90sp"
-                android:textDirection="rtl"/>
+                android:textColor="#ff0000"
+                android:textDirection="rtl"
+                android:textSize="90sp" />
 
         </LinearLayout>
-
     </LinearLayout>
+
 </ScrollView>
 
 

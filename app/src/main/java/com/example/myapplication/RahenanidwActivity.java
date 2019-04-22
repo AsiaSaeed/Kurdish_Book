@@ -3,7 +3,6 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -14,7 +13,9 @@ import android.widget.Toast;
 
 public class RahenanidwActivity extends AppCompatActivity {
     Button next;
+    Button back;
     int scoreRahenanidw;
+    int generalScore;
     RadioButton firstRadioButton;
     RadioButton secondRadioButton;
     RadioButton thirdRadioButton;
@@ -42,34 +43,22 @@ public class RahenanidwActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rahinanidw);
+
+        Intent intentP = getIntent();
+        generalScore = intentP.getIntExtra("scoreR1A", 0);
+
         next = findViewById(R.id.next);
+        back = findViewById(R.id.back_r2a);
 
-        nawyWenakanBleMP =MediaPlayer.create(this,R.raw.nawy_wenakan_ble);
-        baznayZherWenakanRangbkaTV=findViewById(R.id.baznay_zher_wenakan_rangbka_tv);
-        //baznayZherWenakanRangbkaMP=MediaPlayer.create(this,R.raw.);
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                nawyWenakanBleMP.start();
-//                baznayZherWenakanRangbkaMP.start();
-//            }
-//        },4000);
+        nawyWenakanBleTV = findViewById(R.id.nawi_wenakan_ble);
+        nawyWenakanBleMP = MediaPlayer.create(this, R.raw.nawy_wenakan_ble);
+        baznayZherWenakanRangbkaTV = findViewById(R.id.baznay_zher_wenakan_rangbka_tv);
 
-        nawyWenakanBleTV =findViewById(R.id.nawi_wenakan_ble);
-
-        nawyWenakanBleTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nawyWenakanBleMP.start();
-
-            }
-        });
         audio1 = MediaPlayer.create(this, R.raw.parda);
         audio2 = MediaPlayer.create(this, R.raw.darga);
         audio3 = MediaPlayer.create(this, R.raw.amad);
         audio4 = MediaPlayer.create(this, R.raw.panjara);
 
-        next = findViewById(R.id.next);
         firstCardView = findViewById(R.id.card_one);
         secondCardView = findViewById(R.id.card_two);
         thirdCardView = findViewById(R.id.card_three);
@@ -79,8 +68,7 @@ public class RahenanidwActivity extends AppCompatActivity {
         secondRadioButton = findViewById(R.id.darga_rb);
         thirdRadioButton = findViewById(R.id.amad_rb);
         fourthRadioButton = findViewById(R.id.panjara_rb);
-
-
+        nawyWenakanBleMP.start();
         firstCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,43 +98,71 @@ public class RahenanidwActivity extends AppCompatActivity {
             }
         });
 
+
+//        baznayZherWenakanRangbkaMP=MediaPlayer.create(this,R.raw.);
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                nawyWenakanBleMP.start();
+//                baznayZherWenakanRangbkaMP.start();
+//            }
+//        },4000);
+
+        nawyWenakanBleTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nawyWenakanBleMP.start();
+
+            }
+        });
+
+//        back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(RahenanidwActivity.this, WanekanActivity.class);
+//                startActivity(intent);
+//            }
+        //      });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (state1) {
-                    state1 = false;
+                if (state1 && firstRadioButton.isChecked()) {
+                    if (firstRadioButton.isChecked())
+                        state1 = false;
                     scoreRahenanidw++;
                     firstRadioButton.setEnabled(false);
                 }
-                if (state2) {
+                if (state2 && secondRadioButton.isChecked()) {
                     state2 = false;
                     scoreRahenanidw++;
                     secondRadioButton.setEnabled(false);
                 }
-                if (state3) {
+                if (state3 && thirdRadioButton.isChecked()) {
                     state3 = false;
                     scoreRahenanidw++;
                     thirdRadioButton.setEnabled(false);
                 }
-                if (fourthRadioButton.isChecked()){
+                if (fourthRadioButton.isChecked() && state4) {
                     Toast.makeText(RahenanidwActivity.this, "پەنجەرە د ی تیا نیە هەولدەوە", Toast.LENGTH_SHORT).show();
-                    firstRadioButton.setEnabled(true);
-                    secondRadioButton.setEnabled(true);
-                    thirdRadioButton.setEnabled(true);
-
+                    fourthRadioButton.setChecked(false);
+                    state4 = false;
                 }
 
 
-                if (scoreRahenanidw==3 && !(fourthRadioButton.isChecked()))
-                {
+                if (scoreRahenanidw == 3 && !(fourthRadioButton.isChecked()) && state4) {
+                    generalScore = generalScore + scoreRahenanidw;
+                    Toast.makeText(RahenanidwActivity.this, "پیرۆزە +3 نمرە" + " کۆی گشتی: " + generalScore + " نمرە ", Toast.LENGTH_SHORT).show();
                     intent = new Intent(RahenanidwActivity.this, SplitActivity.class);
-                startActivity(intent);
-                }
-                else if(scoreRahenanidw<3 && !(fourthRadioButton.isChecked()))
-                  Toast.makeText(RahenanidwActivity.this, "هەموو وەڵامە راستەکانت نەدۆزیەوە، دوبارە هەولدەوە", Toast.LENGTH_SHORT).show();
-                else if(scoreRahenanidw<3 && (fourthRadioButton.isChecked())) {
+                    intent.putExtra("scoreRahenaniDw", generalScore);
+                    startActivity(intent);
+                }  else if (scoreRahenanidw == 3 && (fourthRadioButton.isChecked())) {
+                    state4 = true;
+                    next.setEnabled(true);
                     Toast.makeText(RahenanidwActivity.this, "هەموو وەڵامە راستەکانت دۆزیەوە،بەلام پەنجەرە د ی تیا نیە", Toast.LENGTH_SHORT).show();
+                }else if (scoreRahenanidw < 3 && !(fourthRadioButton.isChecked())) {
+                    state4=true;
+                    Toast.makeText(RahenanidwActivity.this, "هەموو وەڵامە راستەکانت نەدۆزیەوە، دوبارە هەولدەوە", Toast.LENGTH_SHORT).show();
                 }
             }
         });

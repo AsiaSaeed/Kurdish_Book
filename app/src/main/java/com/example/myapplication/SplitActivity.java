@@ -15,16 +15,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Model.Wanekan;
+
 public class SplitActivity extends AppCompatActivity implements View.OnDragListener, View.OnLongClickListener {
 
-    private static final String TAG = SplitActivity.class.getSimpleName();
-    private TextView textView1,textView2;
+    private TextView textView1, textView2;
     MediaPlayer mediaPlayer;
-    boolean state=false;
+    boolean state = false;
     Button next;
+    Button back;
     int scoreSplitActivity;
+    int generalScore;
     private static final String TEXT_VIEW_TAG = "DRAG TEXT";
-
 
 
     @Override
@@ -33,36 +35,54 @@ public class SplitActivity extends AppCompatActivity implements View.OnDragListe
         setContentView(R.layout.activity_split);
         findViews();
         implementEvents();
-        next=findViewById(R.id.next);
+        MediaPlayer jyakrdnawaRutalkrdn=MediaPlayer.create(this,R.raw.jyakrdnawa);
+        jyakrdnawaRutalkrdn.start();
+        next = findViewById(R.id.next);
+        back=findViewById(R.id.back_sa);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(SplitActivity.this, WanekanActivity.class);
+                startActivity(intent);
+            }
+        });
+        final Intent intent1 = getIntent();
+        generalScore = intent1.getIntExtra("scoreRahenaniDw", 0);
+
+
         next.setEnabled(false);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(SplitActivity.this,CircleTheWordActivity.class);
+                Toast.makeText(SplitActivity.this,  "پیرۆزە کۆی گشتی: " +generalScore+" نمرە", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SplitActivity.this, CircleTheWordActivity.class);
+                intent.putExtra("SplitActivityScore",generalScore);
                 startActivity(intent);
             }
         });
 
 
-}
-    public void playSoundFile(Integer fileName){
+    }
+
+    public void playSoundFile(Integer fileName) {
         mediaPlayer = MediaPlayer.create(this, fileName);
         mediaPlayer.start();
     }
 
-    public void jyakrdnawa(View v){
+    public void jyakrdnawa(View v) {
         playSoundFile(R.raw.jyakrdnawa);
     }
 
-    public void amad(View v){
+    public void amad(View v) {
         playSoundFile(R.raw.amad_ama_d);
     }
+
     //Find all views and set Tag to all draggable views
     private void findViews() {
         textView1 = (TextView) findViewById(R.id.label1);
         textView1.setTag(TEXT_VIEW_TAG);
         textView2 = (TextView) findViewById(R.id.label2);
-       textView2.setTag(TEXT_VIEW_TAG);
+        textView2.setTag(TEXT_VIEW_TAG);
 
     }
 
@@ -125,7 +145,7 @@ public class SplitActivity extends AppCompatActivity implements View.OnDragListe
                     // to give any color tint to the View to indicate that it can accept
                     // data.
 
-                      //view.getBackground().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);//set background color to your view
+                    //view.getBackground().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);//set background color to your view
 
                     // Invalidate the view to force a redraw in the new tint
                     //  view.invalidate();
@@ -174,10 +194,13 @@ public class SplitActivity extends AppCompatActivity implements View.OnDragListe
 
                 // Does a getResult(), and displays what happened.
                 if (event.getResult()) {
-                    Toast.makeText(this, "دانانەکەت سەرکەوتو بوو", Toast.LENGTH_SHORT).show();
-                    next.setEnabled(true);
-                }
-                else
+                    Toast.makeText(this, "دانانەکەت سەرکەوتو بوو +1نمرە ", Toast.LENGTH_SHORT).show();
+                    scoreSplitActivity++;
+                    if (scoreSplitActivity == 2) {
+                        generalScore = generalScore + scoreSplitActivity;
+                        next.setEnabled(true);
+                    }
+                } else
                     Toast.makeText(this, "دانانەکەت هەلە بو دوبارە کەوە", Toast.LENGTH_SHORT).show();
 
 

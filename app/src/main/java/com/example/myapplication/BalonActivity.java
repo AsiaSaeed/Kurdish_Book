@@ -6,85 +6,71 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.Toast;
 
-public class BalonActivity extends AppCompatActivity implements View.OnClickListener {
-    ImageButton pink;
-    ImageButton yellow;
-    ImageButton red;
-    ImageButton purple;
-    ImageButton green;
-    ImageButton orange;
-
-    Button next;
-
-    MediaPlayer pinkA;
-    MediaPlayer yellowA;
-    MediaPlayer redA;
-    MediaPlayer purpleA;
-    MediaPlayer greenA;
-    MediaPlayer orangeA;
+public class BalonActivity extends AppCompatActivity {
+    MediaPlayer mediaPlayer;
+    Button nextBA;
+    int scoreBalon;
+    int generalScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balon);
+        Intent intent=getIntent();
+        generalScore=intent.getIntExtra("scoreTA",0);
 
-        next=findViewById(R.id.next);
-
-        pink=findViewById(R.id.pink);
-        yellow=findViewById(R.id.yellow);
-        red=findViewById(R.id.red);
-        purple=findViewById(R.id.purple);
-        green=findViewById(R.id.green);
-        orange=findViewById(R.id.orange);
-
-
-        pinkA=MediaPlayer.create(this,R.raw.pink);
-        yellowA=MediaPlayer.create(this,R.raw.yellow);
-        redA=MediaPlayer.create(this,R.raw.red);
-        purpleA=MediaPlayer.create(this,R.raw.purple);
-        greenA=MediaPlayer.create(this,R.raw.green);
-        orangeA=MediaPlayer.create(this,R.raw.orange);
-
-
-        pink.setOnClickListener(this);
-        yellow.setOnClickListener(this);
-        red.setOnClickListener(this);
-        purple.setOnClickListener(this);
-        green.setOnClickListener(this);
-        orange.setOnClickListener(this);
-
-        next.setOnClickListener(new View.OnClickListener() {
+        nextBA=findViewById(R.id.next_ba);
+        nextBA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                scoreBalon++;
+                generalScore=generalScore+scoreBalon;
+                Toast.makeText(BalonActivity.this, "پیرۆزە کۆی گشتی: " + generalScore + " نمرە", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(BalonActivity.this,SelectTheLetterActivity.class);
+                intent.putExtra("scoreBA",generalScore);
                 startActivity(intent);
             }
         });
     }
+    public void playSoundFile(Integer fileName){
+        mediaPlayer = MediaPlayer.create(this, fileName);
+        mediaPlayer.start();
+    }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.pink:
-                pinkA.start();
-                break;
-            case R.id.yellow:
-                yellowA.start();
-                break;
-            case R.id.red:
-                redA.start();
-                break;
-            case R.id.purple:
-                purpleA.start();
-                break;
-            case R.id.green:
-                greenA.start();
-                break;
-            case R.id.orange:
-                orangeA.start();
-                break;
-        }
+    public void rangakanble(View v){
+
+            playSoundFile(R.raw.rangakan_bbenaw_ble);
+
+
+    }
+    public void mor(View v){
+
+        playSoundFile(R.raw.purple);
+    }
+    public void sur(View v){
+
+        playSoundFile(R.raw.red);
+    }
+    public void narnje(View v){
+
+        playSoundFile(R.raw.orange);
+
+    }
+    public void pamayi(View v){
+
+        playSoundFile(R.raw.pink);
+
+    }
+    public void zard(View v){
+
+        playSoundFile(R.raw.yellow);
+
+    }
+    public void sawz(View v){
+
+        playSoundFile(R.raw.green);
+
     }
 }

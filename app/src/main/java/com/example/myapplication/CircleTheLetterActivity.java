@@ -23,12 +23,17 @@ public class CircleTheLetterActivity extends AppCompatActivity implements View.O
     private boolean tv4State = true;
     public int ctlScore;
     Button next;
+    Button backCTLA;
+    int generalScore;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circle_the_letter);
+        backCTLA = findViewById(R.id.back_ctla);
+        Intent intent = getIntent();
+        generalScore = intent.getIntExtra("scoreISA", 0);
         ctlFirstTv = findViewById(R.id.first_cld_tv);
         ctlSecondTv = findViewById(R.id.second_cld_tv);
         ctlThirdTv = findViewById(R.id.third_cld_tv);
@@ -37,12 +42,30 @@ public class CircleTheLetterActivity extends AppCompatActivity implements View.O
         ctlSecondTv.setOnTouchListener(this);
         ctlThirdTv.setOnTouchListener(this);
         ctlForthTv.setOnTouchListener(this);
-        next=findViewById(R.id.next_ctl);
+        backCTLA = findViewById(R.id.back_ctla);
+        next = findViewById(R.id.next_ctl);
+        backCTLA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CircleTheLetterActivity.this, WanekanActivity.class);
+                startActivity(intent);
+            }
+        });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(CircleTheLetterActivity.this,ToxbkawaActivity.class);
-                startActivity(intent);
+                if (ctlScore == 3) {
+                    generalScore = generalScore + ctlScore;
+                    Toast.makeText(CircleTheLetterActivity.this, "پیرۆزە کۆی گشتی: " + generalScore + " نمرە", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(CircleTheLetterActivity.this, ToxbkawaActivity.class);
+                    intent.putExtra("scoreCTLA", generalScore);
+                    startActivity(intent);
+                }
+                else
+                    Toast.makeText(CircleTheLetterActivity.this, " هەولبدەوە" , Toast.LENGTH_SHORT).show();
+
+
+
             }
         });
 
@@ -69,25 +92,25 @@ public class CircleTheLetterActivity extends AppCompatActivity implements View.O
                 if (comingId == R.id.first_cld_tv && tv1State) {
                     ctlScore++;
                     tv1State = false;
-                    newString = comingString.replace("د","<font color=#FF0000>د</font>");
+                    newString = comingString.replace("د", "<font color=#FF0000>د</font>");
                     ctlFirstTv.setText(Html.fromHtml(newString));
                     Toast.makeText(this, "پیرۆزە هەڵبژاردنەکەت ڕاستە", Toast.LENGTH_SHORT).show();
                 } else if (comingId == R.id.second_cld_tv && tv2State) {
                     ctlScore++;
                     tv2State = false;
-                    newString = comingString.replace("د","<font color=#FF0000>د</font>");
+                    newString = comingString.replace("د", "<font color=#FF0000>د</font>");
                     ctlSecondTv.setText(Html.fromHtml(newString));
                     Toast.makeText(this, "پیرۆزە هەڵبژاردنەکەت ڕاستە", Toast.LENGTH_SHORT).show();
                 } else if (comingId == R.id.third_cld_tv && tv3State) {
                     ctlScore++;
                     tv3State = false;
-                    newString = comingString.replace("د","<font color=#FF0000>د</font>");
+                    newString = comingString.replace("د", "<font color=#FF0000>د</font>");
                     ctlThirdTv.setText(Html.fromHtml(newString));
                     Toast.makeText(this, "پیرۆزە هەڵبژاردنەکەت ڕاستە", Toast.LENGTH_SHORT).show();
                 } else if (comingId == R.id.forth_cld_tv && tv4State) {
                     ctlScore++;
                     tv4State = false;
-                    newString = comingString.replace("د","<font color=#FF0000>د</font>");
+                    newString = comingString.replace("د", "<font color=#FF0000>د</font>");
                     ctlForthTv.setText(Html.fromHtml(newString));
                     Toast.makeText(this, "پیرۆزە هەڵبژاردنەکەت ڕاستە", Toast.LENGTH_SHORT).show();
                 }

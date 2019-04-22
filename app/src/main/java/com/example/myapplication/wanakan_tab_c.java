@@ -30,7 +30,7 @@ View view;
        course1.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Intent intent=new Intent(view.getContext(),RahenaniEak.class);
+               Intent intent=new Intent(view.getContext(),WanekanActivity.class);
                startActivity(intent);
            }
        });

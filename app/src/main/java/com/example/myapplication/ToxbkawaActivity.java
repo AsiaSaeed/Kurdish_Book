@@ -9,6 +9,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.example.myapplication.Model.Wanekan;
 
 import static com.example.myapplication.R.id.normal;
 
@@ -16,19 +19,40 @@ public class ToxbkawaActivity extends AppCompatActivity {
 
     private PaintView paintView;
     Button next;
+    Button backTA;
+    int scoreTA;
+    int generalScore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toxbkawa);
+        Intent intent = getIntent();
+        generalScore = intent.getIntExtra("scoreCTLA", 0);
+
+        backTA = findViewById(R.id.back_ta);
+        backTA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ToxbkawaActivity.this, WanekanActivity.class);
+                startActivity(intent);
+            }
+        });
+
         paintView = (PaintView) findViewById(R.id.paintView);
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         paintView.init(metrics);
-        next=findViewById(R.id.next);
+
+        next = findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(ToxbkawaActivity.this,BalonActivity.class);
+                scoreTA++;
+                generalScore=generalScore+scoreTA;
+                Toast.makeText(ToxbkawaActivity.this, "پیرۆزە کۆی گشتی: " + generalScore + " نمرە", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ToxbkawaActivity.this, BalonActivity.class);
+                intent.putExtra("scoreTA",generalScore);
                 startActivity(intent);
             }
         });
@@ -43,7 +67,7 @@ public class ToxbkawaActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case normal:
                 paintView.normal();
                 return true;

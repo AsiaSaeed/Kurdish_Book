@@ -7,20 +7,39 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SelectTheLetterActivity extends AppCompatActivity {
     Button next;
+    Button backSTLA;
+    int scoreSTLA;
+    int generalScore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_the_letter);
-        next=findViewById(R.id.next);
+        Intent intent = getIntent();
+        generalScore = intent.getIntExtra("scoreBA", 0);
+
+        next = findViewById(R.id.next);
+        backSTLA = findViewById(R.id.back_stla);
         setTitle("dev2qa.com - Android Set TextView Foreground Background Color Example.");
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent=new Intent(SelectTheLetterActivity.this,TypeLetterActivity.class);
-               startActivity(intent);
+                generalScore = generalScore + scoreSTLA;
+                Toast.makeText(SelectTheLetterActivity.this, "پیرۆزە کۆی گشتی: " + generalScore + " نمرە", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SelectTheLetterActivity.this, TypeLetterActivity.class);
+                startActivity(intent);
+            }
+        });
+        backSTLA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(SelectTheLetterActivity.this, WanekanActivity.class);
+                startActivity(intent);
             }
         });
         // Get the textview object.
@@ -35,7 +54,8 @@ public class SelectTheLetterActivity extends AppCompatActivity {
         setForeGroundColord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (scoreSTLA < 5)
+                    scoreSTLA++;
                 d.setTextColor(Color.RED);
 
 
@@ -47,7 +67,8 @@ public class SelectTheLetterActivity extends AppCompatActivity {
         setForeGroundColord2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (scoreSTLA < 5)
+                    scoreSTLA++;
                 d2.setTextColor(Color.RED);
 
             }
@@ -59,7 +80,8 @@ public class SelectTheLetterActivity extends AppCompatActivity {
         setForeGroundColord3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (scoreSTLA < 5)
+                    scoreSTLA++;
                 d3.setTextColor(Color.RED);
 
             }
@@ -69,7 +91,8 @@ public class SelectTheLetterActivity extends AppCompatActivity {
         setForeGroundColord4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (scoreSTLA < 5)
+                    scoreSTLA++;
                 d4.setTextColor(Color.RED);
 
             }
@@ -80,7 +103,8 @@ public class SelectTheLetterActivity extends AppCompatActivity {
         setForeGroundColord5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (scoreSTLA < 5)
+                    scoreSTLA++;
                 d5.setTextColor(Color.RED);
 
             }
