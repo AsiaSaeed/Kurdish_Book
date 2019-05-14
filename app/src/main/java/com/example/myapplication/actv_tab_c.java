@@ -23,6 +23,3 @@ public class actv_tab_c extends Fragment {
       return view;
     }
 }
-
-
-
